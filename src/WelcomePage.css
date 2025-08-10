@@ -1,0 +1,173 @@
+.welcome-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(120deg, #050c1b 0%, #1a2a38 50%, #2d0b41 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: bgFadeIn 1.2s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+@keyframes bgFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.welcome-glass {
+  background: rgba(255,255,255,0.10);
+  border-radius: 32px;
+  box-shadow: 0 12px 40px 0 rgba(0,0,0,0.25), 0 0 0 1.5px rgba(255,255,255,0.08) inset;
+  padding: 60px 48px 48px 48px;
+  max-width: 480px;
+  width: 96vw;
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: glassFadeIn 1.4s cubic-bezier(0.4,0.2,0.2,1);
+}
+
+@keyframes glassFadeIn {
+  from { transform: translateY(40px) scale(0.94); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.welcome-title {
+  font-size: 3.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00fff0 10%, #6e7bff 40%, #ff6fd8 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-subtitle {
+  color: #e0e6f6;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.futuristic-icon {
+  font-size: 1.7rem;
+  margin-right: 6px;
+  vertical-align: -2px;
+}
+
+.welcome-desc {
+  color: #c2c9e6;
+  font-size: 1.08rem;
+  margin-bottom: 22px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.welcome-enter {
+  background: linear-gradient(90deg, #00fff0 10%, #6e7bff 90%);
+  color: #181b2c;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 40px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 14px 0 rgba(0,255,240,0.13), 0 2px 12px 0 rgba(110,123,255,0.11);
+  transition: transform 0.18s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.18s cubic-bezier(0.4,0.2,0.2,1);
+}
+.welcome-enter:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(0,255,240,0.19), 0 8px 28px 0 rgba(110,123,255,0.15);
+}
+
+.welcome-aurora {
+  position: absolute;
+  top: -120px;
+  left: -120px;
+  width: 120vw;
+  height: 120vh;
+  pointer-events: none;
+  z-index: 0;
+}
+.aurora-layer {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.38;
+  animation: auroraPulse 7s infinite alternate cubic-bezier(0.4,0.2,0.2,1);
+}
+.aurora1 {
+  width: 500px;
+  height: 500px;
+  background: #00fff0;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.aurora2 {
+  width: 700px;
+  height: 700px;
+  background: #6e7bff;
+  top: 40%;
+  left: 50%;
+  animation-delay: 2s;
+}
+.aurora3 {
+  width: 400px;
+  height: 400px;
+  background: #ff6fd8;
+  top: 65%;
+  left: 30%;
+  animation-delay: 4s;
+}
+@keyframes auroraPulse {
+  0% { opacity: 0.32; transform: scale(1) translateY(0); }
+  100% { opacity: 0.49; transform: scale(1.08) translateY(-18px); }
+}
+
+.welcome-footer {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  color: #9fa8c8;
+  font-size: 0.98rem;
+  z-index: 10;
+  pointer-events: none;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 700px) {
+  .welcome-glass {
+    padding: 32px 8vw 28px 8vw;
+    max-width: 98vw;
+  }
+  .welcome-title {
+    font-size: 2.1rem;
+  }
+}

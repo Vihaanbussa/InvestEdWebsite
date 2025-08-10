@@ -1,0 +1,9 @@
+.budget-fadein {
+  animation: fadeInBudget 1.1s cubic-bezier(.4,1.3,.6,1);
+}
+
+@keyframes fadeInBudget {
+  0% { opacity: 0; transform: translateY(32px) scale(0.98); }
+  60% { opacity: 1; transform: translateY(-4px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}

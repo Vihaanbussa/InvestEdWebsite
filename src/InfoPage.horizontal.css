@@ -1,0 +1,84 @@
+.why-investing-matters .why-investing-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.why-investing-main {
+  flex: 2 1 340px;
+  min-width: 280px;
+}
+
+.why-investing-tips {
+  flex: 1 1 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 20px 14px 20px;
+  margin-top: 10px;
+}
+
+.tips-title {
+  font-size: 18px;
+  color: var(--blue-accent);
+  margin-bottom: 10px;
+}
+
+.tips-list {
+  list-style: disc inside;
+  padding-left: 0;
+  font-size: 15px;
+  color: #444;
+}
+.tips-list li {
+  margin-bottom: 8px;
+}
+
+.vehicle-section-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.vehicle-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+  flex: 3 1 600px;
+  min-width: 320px;
+}
+
+.vehicle-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 18px 12px 18px;
+  min-width: 0;
+}
+
+.vehicle-tips-summary {
+  flex: 1 1 220px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 20px 14px 20px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+@media (max-width: 900px) {
+  .why-investing-matters .why-investing-content,
+  .vehicle-section-horizontal {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .vehicle-items-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import "./App.css";
+import "./InvestingPage.css";
 import "./budget-form-2x2.css";
 import "./budget-fadein.css";
 import "./InfoPage.horizontal.css";
@@ -239,208 +240,264 @@ const YearlyBreakdown = ({
 */
 const InfoPage = () => {
   return (
-    <div className="info-page card">
-      <h2 className="info-title">The Power of Investing Early</h2>
-      <div className="info-container">
-        <div className="info-box why-investing-matters">
-  <h3 className="info-subtitle">Why Investing Matters</h3>
-  <div className="why-investing-grid">
-    <div className="why-investing-benefits">
-      <p className="info-text">
-        Investing is how you make your money work for you. The earlier you start, the more powerful your results—thanks to compounding and time.
-      </p>
-      <ul className="info-list">
-        <li><strong>Grow Your Wealth:</strong> Build financial security and reach your goals faster.</li>
-        <li><strong>Beat Inflation:</strong> Stay ahead as prices rise over time.</li>
-        <li><strong>Compound Returns:</strong> Watch your earnings generate even more earnings.</li>
-        <li><strong>Financial Freedom:</strong> Investing gives you more choices and a comfortable future.</li>
-      </ul>
-    </div>
-    <div className="why-investing-tips-card">
-      <h4 className="tips-title">Quick Tips</h4>
-      <ul className="tips-list">
-        <li><strong>Start Early:</strong> Time is your best friend.</li>
-        <li><strong>Be Consistent:</strong> Invest regularly—even small amounts.</li>
-        <li><strong>Diversify:</strong> Spread your money across different assets.</li>
-        <li><strong>Stay Calm:</strong> Ignore short-term noise, focus on the long term.</li>
-      </ul>
-    </div>
-  </div>
-  <div className="key-takeaway-box">
-    <span className="key-takeaway-label">Key Takeaway</span>
-    <span className="key-takeaway-text">The sooner you invest, the greater your potential gains—thanks to the magic of compounding.</span>
-  </div>
-  <div className="real-life-example-callout">
-    <h4 className="example-title">Real-Life Example</h4>
-    <div className="example-content">
-      <div className="example-avatar">
-        <img src="/alice.jpeg" alt="Alice" />
-        <span>Alice</span>
-      </div>
-      <div className="example-details">
-        <p><strong>Starts at 25:</strong> Invests $200/month at 7% annual return.<br />By 65: <span className="example-amount">$528,000</span></p>
-      </div>
-      <div className="example-avatar">
-        <img src="/bob.jpeg" alt="Bob" />
-        <span>Bob</span>
-      </div>
-      <div className="example-details">
-        <p><strong>Starts at 35:</strong> Same $200/month, same return.<br />By 65: <span className="example-amount">$245,000</span></p>
-      </div>
-    </div>
-    <div className="example-summary">
-      <span>Starting 10 years earlier more than <strong>doubles</strong> your outcome!</span>
-    </div>
-  </div>
-</div>
-        <div className="info-box">
-          <h3 className="info-subtitle">Why Start Early?</h3>
-          <div className="info-box-inner">
-            <ul className="info-list">
-              <li><strong>Exponential Growth:</strong> More time means more growth.</li>
-              <li><strong>Risk Mitigation:</strong> A long-term approach smooths out volatility.</li>
-              <li><strong>Compounding Magic:</strong> Earnings generate additional earnings over time.</li>
-            </ul>
-          </div>
-        </div>
-        <div className="info-box real-life-example">
-          <h3 className="info-subtitle">Real-Life Example</h3>
-          <div className="example-cards">
-            <div className="example-card">
-              <div className="image-header">Alice</div>
-              <img src="/alice.jpeg" alt="Alice" className="example-card-image" />
-              <p>
-                Begins investing $200/month at age 25 with a 7% annual return (compounded monthly).
-                By age 65, her investment grows to approximately <strong>$528,000</strong>.
-              </p>
-            </div>
-            <div className="example-card">
-              <div className="image-header">Bob</div>
-              <img src="/bob.jpeg" alt="Bob" className="example-card-image" />
-              <p>
-                Starts at age 35 with the same $200/month contribution and 7% return.
-                By age 65, his investment grows to roughly <strong>$245,000</strong>.
-              </p>
-            </div>
-            <div className="example-card">
-              <div className="image-header">Charlie</div>
-              <img src="/charlie.jpeg" alt="Charlie" className="example-card-image" />
-              <p>
-                Begins investing $200/month at age 25 like Alice, but stops contributions at age 35.
-                Despite no contributions after age 35, his investment grows to about <strong>$350,000</strong> by age 65,
-                thanks to compound interest on his early contributions.
-              </p>
-            </div>
-          </div>
-          <p className="info-text">
-            This example highlights not only the power of an early start but also the impact of consistency and duration on your final investment outcome.
+    <div className="investing-page">
+      <header className="page-header">
+        <h1 className="page-title">The Power of <span className="highlight">Investing Early</span></h1>
+        <p className="page-subtitle">How time and compound interest can transform your financial future</p>
+      </header>
+
+      <section className="investing-hero">
+        <div className="hero-content">
+          <h2>Why Investing Matters</h2>
+          <p className="hero-text">
+            Investing isn't just about growing wealth—it's about securing your future and achieving financial freedom. 
+            The chart below compares investing $500 monthly with a 7% annual return versus keeping money in a savings account earning the national average of 0.38% APY.
           </p>
         </div>
-        <div className="info-box">
-          <h3 className="info-subtitle">Tips for Getting Started</h3>
-          <div className="info-box-inner">
-            <ul className="info-list">
-              <li><strong>Start Small:</strong> Even modest amounts add up over time.</li>
-              <li><strong>Be Consistent:</strong> Regular contributions maximize compounding benefits.</li>
-              <li><strong>Diversify:</strong> Spread your investments to reduce risk.</li>
-              <li><strong>Stay Patient:</strong> Think long term and avoid impulsive decisions during market downturns.</li>
-            </ul>
+        <div className="hero-visual">
+          <div className="growth-visual">
+            <div className="growth-bars">
+              <div className="growth-bar early" style={{ height: '200px' }}>
+                <span className="growth-amount">$1.32M</span>
+              </div>
+              <div className="bar-label">Start at 25</div>
+            </div>
+            <div className="growth-bars">
+              <div className="growth-bar late" style={{ height: '120px' }}>
+                <span className="growth-amount">$610K</span>
+              </div>
+              <div className="bar-label">Start at 35</div>
+            </div>
+            <div className="growth-bars">
+              <div className="growth-bar none" style={{ height: '40px' }}>
+                <span className="growth-amount">$187K</span>
+              </div>
+              <div className="bar-label">Savings Acc.</div>
+            </div>
+          </div>
+          <div className="growth-difference">
+            <p className="chart-note">Projected value at age 65 with $500 monthly investment at 7% annual return</p>
+            <div className="difference-amount">
+              <span>+$710K</span>
+              <span className="difference-label">Starting at 25 vs 35</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="key-benefits">
+        <h2 className="section-title">Key Benefits of Investing</h2>
+        <div className="benefits-grid">
+          <div className="benefit-card">
+            <div className="benefit-icon">📈</div>
+            <h3>Wealth Growth</h3>
+            <p>Outpace inflation and build substantial wealth over time through the power of compound returns.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon">⏳</div>
+            <h3>Time Advantage</h3>
+            <p>Starting early gives your investments more time to grow, significantly impacting your final returns.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon">🛡️</div>
+            <h3>Financial Security</h3>
+            <p>Create multiple income streams and build a safety net for unexpected expenses or early retirement.</p>
+          </div>
+          <div className="benefit-card">
+            <div className="benefit-icon">🎯</div>
+            <h3>Goal Achievement</h3>
+            <p>Reach major financial milestones like buying a home, funding education, or traveling the world.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="investor-comparison">
+        <div className="comparison-header">
+          <h2>Three Savers, Three Different Outcomes</h2>
+          <p>How starting early and investing impacts your financial future</p>
+        </div>
+        
+        <div className="investor-profiles">
+          <div className="investor alice">
+            <div className="investor-header">
+              <div className="investor-avatar">A</div>
+              <div className="investor-info">
+                <h3>Alice</h3>
+                <p>Starts at age 25</p>
+              </div>
+            </div>
+            <div className="investor-details">
+              <div className="detail-item">
+                <span className="detail-label">Monthly Investment</span>
+                <span className="detail-value">$500</span>
+              </div>
+              <div className="detail-item">
+                <span className="detail-label">Annual Return</span>
+                <span className="detail-value">7%</span>
+              </div>
+              <div className="detail-item total">
+                <span className="detail-label">At age 65</span>
+                <span className="detail-value" style={{color: '#2ecc71'}}>$1,322,285</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="comparison-vs">vs</div>
+
+          <div className="investor bob">
+            <div className="investor-header">
+              <div className="investor-avatar">B</div>
+              <div className="investor-info">
+                <h3>Bob</h3>
+                <p>Starts at age 35</p>
+              </div>
+            </div>
+            <div className="investor-details">
+              <div className="detail-item">
+                <span className="detail-label">Monthly Investment</span>
+                <span className="detail-value">$500</span>
+              </div>
+              <div className="detail-item">
+                <span className="detail-label">Annual Return</span>
+                <span className="detail-value">7%</span>
+              </div>
+              <div className="detail-item total">
+                <span className="detail-label">At age 65</span>
+                <span className="detail-value">$610,100</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="comparison-vs">vs</div>
+
+          <div className="investor charlie">
+            <div className="investor-header">
+              <div className="investor-avatar">C</div>
+              <div className="investor-info">
+                <h3>Charlie</h3>
+                <p>Saves but doesn't invest</p>
+              </div>
+            </div>
+            <div className="investor-details">
+              <div className="detail-item">
+                <span className="detail-label">Monthly Savings</span>
+                <span className="detail-value">$500</span>
+              </div>
+              <div className="detail-item">
+                <span className="detail-label">National Avg. APY</span>
+                <span className="detail-value">0.38%</span>
+              </div>
+              <div className="detail-item total">
+                <span className="detail-label">At age 65</span>
+                <span className="detail-value">$187,000</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* NEW: Investment Platforms Section */}
-        <div className="info-box deep-dive">
-          <h3 className="info-subtitle">Best Investment Platforms</h3>
-          <p className="info-text">
-            Below are some popular online brokerage and investment platforms, with pros, cons, and links to learn more:
-          </p>
-          <ul className="platform-list">
-            <li>
-              <a href="https://www.fidelity.com" target="_blank" rel="noopener noreferrer">
-                Fidelity
-              </a>
-              <p className="platform-pros"><strong>Pros:</strong> Comprehensive research tools, extensive mutual fund lineup, high-quality customer service.</p>
-              <p className="platform-cons"><strong>Cons:</strong> Some mutual funds carry transaction fees; the interface can be overwhelming for beginners.</p>
-            </li>
-            <li>
-              <a href="https://www.robinhood.com" target="_blank" rel="noopener noreferrer">
-                Robinhood
-              </a>
-              <p className="platform-pros"><strong>Pros:</strong> Commission-free trades, easy mobile app, fractional shares.</p>
-              <p className="platform-cons"><strong>Cons:</strong> Limited research tools, no mutual funds or bonds, occasional reliability issues.</p>
-            </li>
-            <li>
-              <a href="https://www.tdameritrade.com" target="_blank" rel="noopener noreferrer">
-                TD Ameritrade
-              </a>
-              <p className="platform-pros"><strong>Pros:</strong> Robust trading platform (thinkorswim), no commission on stocks/ETFs, excellent educational resources.</p>
-              <p className="platform-cons"><strong>Cons:</strong> Platform may be complex for new users; some mutual funds carry fees.</p>
-            </li>
-            <li>
-              <a href="https://www.schwab.com" target="_blank" rel="noopener noreferrer">
-                Charles Schwab
-              </a>
-              <p className="platform-pros"><strong>Pros:</strong> No minimum account, wide range of low-cost ETFs, strong customer service.</p>
-              <p className="platform-cons"><strong>Cons:</strong> Advanced tools may have a learning curve; some mutual fund expense ratios are higher.</p>
-            </li>
-          </ul>
+        <div className="comparison-summary">
+          <div className="summary-icon">💡</div>
+          <p>By starting just <strong>10 years earlier</strong>, Alice ends up with <strong>$712,185 (117%) more</strong> than Bob. Charlie, who keeps his money in a savings account earning just 0.38% APY, accumulates only <strong>$187,000</strong> — barely more than the $180,000 he contributed. This demonstrates the power of compound interest and the importance of investing for long-term growth.</p>
         </div>
+      </section>
 
-        {/* NEW: Investment Vehicles Section */}
-        <div className="info-box deep-dive">
-          <h3 className="info-subtitle">Key Investment Vehicles</h3>
-          <div className="vehicle-section-horizontal">
-            <div className="vehicle-items-grid">
-              <div className="vehicle-item">
-                <h4>Roth IRA</h4>
-                <p className="info-text">A Roth Individual Retirement Account allows you to contribute after-tax dollars. Earnings grow tax-free, and qualified withdrawals in retirement are tax-free.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Tax-free growth, no required minimum distributions, contributions can be withdrawn penalty-free.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> Income limits restrict eligibility; contributions are not tax-deductible.</p>
+      <section className="investment-vehicles">
+        <h2>Investment Vehicles Explained</h2>
+        <div className="vehicles-grid">
+          <div className="vehicle-card">
+            <h3>Roth IRA</h3>
+            <p>Tax-advantaged retirement account with tax-free withdrawals in retirement.</p>
+            <div className="vehicle-details">
+              <div className="pros">
+                <h4>Pros</h4>
+                <ul>
+                  <li>Tax-free growth</li>
+                  <li>No required minimum distributions</li>
+                  <li>Contributions can be withdrawn penalty-free</li>
+                </ul>
               </div>
-              <div className="vehicle-item">
-                <h4>401(k)</h4>
-                <p className="info-text">A retirement savings plan sponsored by an employer. Contributions are pre-tax, reducing your taxable income. Many employers offer matching contributions.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Tax-deferred growth, employer match, higher annual contribution limits.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> Early withdrawals are penalized; limited investment choices.</p>
-              </div>
-              <div className="vehicle-item">
-                <h4>Index Fund</h4>
-                <p className="info-text">A mutual fund or ETF designed to track a specific market index, such as the S&P 500. Offers instant diversification and low fees.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Low cost, broad diversification, passive management.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> No chance to outperform the market; returns mirror the tracked index.</p>
-              </div>
-              <div className="vehicle-item">
-                <h4>ETF (Exchange-Traded Fund)</h4>
-                <p className="info-text">A basket of securities traded on an exchange, combining the diversification of mutual funds with the flexibility of stocks.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Traded like stocks, low expense ratios, tax efficient.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> Brokerage commissions (sometimes), bid-ask spreads, may track niche sectors.</p>
-              </div>
-              <div className="vehicle-item">
-                <h4>Bonds</h4>
-                <p className="info-text">Debt securities issued by corporations or governments. Bondholders receive periodic interest payments and return of principal at maturity.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Regular income (coupon payments), lower volatility than stocks, preservation of capital if held to maturity.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> Interest rate risk, credit/default risk, lower long-term returns compared to equities.</p>
-              </div>
-              <div className="vehicle-item">
-                <h4>Mutual Fund</h4>
-                <p className="info-text">A pooled investment vehicle managed by a professional. Investors buy shares in the fund, and the manager allocates money across stocks, bonds, or other assets.</p>
-                <p className="vehicle-pros"><strong>Pros:</strong> Instant diversification, professional management, automatic reinvestment of dividends.</p>
-                <p className="vehicle-cons"><strong>Cons:</strong> Management fees, potential load fees, less control over individual holdings.</p>
+              <div className="cons">
+                <h4>Cons</h4>
+                <ul>
+                  <li>Income limits apply</li>
+                  <li>Contributions are not tax-deductible</li>
+                </ul>
               </div>
             </div>
-            <div className="vehicle-tips-summary">
-              <h4 className="tips-title">Choosing the Right Vehicle</h4>
-              <ul className="tips-list">
-                <li><strong>Match to Goals:</strong> Align your investment vehicle with your time horizon and risk tolerance.</li>
-                <li><strong>Maximize Employer Match:</strong> Always contribute enough to your 401(k) to get the full employer match if available.</li>
-                <li><strong>Consider Taxes:</strong> Know the tax advantages and withdrawal rules for each vehicle.</li>
-                <li><strong>Keep Costs Low:</strong> Favor low-fee index funds and ETFs for long-term growth.</li>
-                <li><strong>Diversify:</strong> Use a mix of vehicles to balance risk and reward.</li>
-              </ul>
+          </div>
+
+          <div className="vehicle-card">
+            <h3>401(k)</h3>
+            <p>Employer-sponsored retirement plan with tax advantages.</p>
+            <div className="vehicle-details">
+              <div className="pros">
+                <h4>Pros</h4>
+                <ul>
+                  <li>Tax-deferred growth</li>
+                  <li>Employer matching contributions</li>
+                  <li>Higher contribution limits</li>
+                </ul>
+              </div>
+              <div className="cons">
+                <h4>Cons</h4>
+                <ul>
+                  <li>Early withdrawal penalties</li>
+                  <li>Limited investment options</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="vehicle-card">
+            <h3>Index Funds</h3>
+            <p>Funds that track a specific market index.</p>
+            <div className="vehicle-details">
+              <div className="pros">
+                <h4>Pros</h4>
+                <ul>
+                  <li>Low fees</li>
+                  <li>Broad market exposure</li>
+                  <li>Passive management</li>
+                </ul>
+              </div>
+              <div className="cons">
+                <h4>Cons</h4>
+                <ul>
+                  <li>No active management</li>
+                  <li>Market returns only</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="action-steps">
+        <h2>Getting Started</h2>
+        <div className="steps-grid">
+          <div className="step">
+            <div className="step-number">1</div>
+            <h3>Start Now</h3>
+            <p>Open an investment account and begin with whatever you can afford.</p>
+          </div>
+          <div className="step">
+            <div className="step-number">2</div>
+            <h3>Be Consistent</h3>
+            <p>Set up automatic contributions to build your investments regularly.</p>
+          </div>
+          <div className="step">
+            <div className="step-number">3</div>
+            <h3>Stay the Course</h3>
+            <p>Keep investing through market ups and downs for long-term growth.</p>
+          </div>
+        </div>
+        <button 
+          className="cta-button"
+          onClick={() => window.open('https://www.fidelity.com/trading/overview?imm_pid=58700008744305213&immid=100734_SEA&imm_eid=ep80471797138&utm_source=GOOGLE&utm_medium=paid_search&utm_account_id=700000001008518&utm_campaign=BRK&utm_content=58700008744305213&utm_term=best+stock+trading&utm_campaign_id=100734&utm_id=71700000119224535&gclsrc=aw.ds&gad_source=1&gad_campaignid=21460318925&gbraid=0AAAAAD7OUhKncFPC1HQUJ5ItrSqrJzHwF&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcnFZzg3OrDWM5KiHDvbLMKmvN1S0uObM94FcvQCMl_1CfFqhXd_1WRoCbDUQAvD_BwE', '_blank')}
+        >
+          Start Your Investment Journey with Fidelity
+        </button>
+      </section>
     </div>
   );
 };
